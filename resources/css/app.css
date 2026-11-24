@@ -1,0 +1,95 @@
+@font-face {
+    font-family: 'Baloo 2';
+    font-style: normal;
+    font-weight: 700 800;
+    font-display: swap;
+    src: url('/fonts/baloo-2.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600 700;
+    font-display: swap;
+    src: url('/fonts/montserrat.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Nunito Sans';
+    font-style: normal;
+    font-weight: 400 500;
+    font-display: swap;
+    src: url('/fonts/nunito-sans.woff2') format('woff2');
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    body {
+        @apply bg-white font-texto text-ameixa antialiased;
+    }
+
+    h1, h2 {
+        @apply font-titulo font-extrabold leading-none tracking-tight;
+    }
+
+    h3 {
+        @apply font-subtitulo font-bold;
+    }
+
+    :focus-visible {
+        @apply outline outline-[3px] outline-offset-2 outline-ameixa;
+    }
+}
+
+@layer components {
+    .botao {
+        @apply inline-flex min-h-[44px] items-center justify-center gap-2 rounded-2xl border-2 border-transparent px-5 py-2.5 font-subtitulo text-sm font-bold transition-colors;
+    }
+
+    .botao-primario {
+        @apply botao bg-limao text-floresta hover:bg-lima;
+    }
+
+    .botao-secundario {
+        @apply botao border-floresta bg-white text-floresta hover:bg-pastel;
+    }
+
+    .botao-perigo {
+        @apply botao bg-ameixa text-white hover:bg-floresta;
+    }
+
+    .cartao {
+        @apply rounded-[2rem] bg-white p-6 sm:p-8;
+    }
+
+    .caixa-icone {
+        @apply inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl;
+    }
+
+    .rotulo {
+        @apply mb-2 block font-subtitulo text-sm font-semibold text-floresta;
+    }
+
+    .campo {
+        @apply block w-full min-h-[44px] rounded-xl border-2 border-floresta/30 bg-white px-4 py-2.5 text-base text-ameixa placeholder:text-ameixa/50 focus:border-floresta focus:outline-none focus:ring-4 focus:ring-limao/60;
+    }
+
+    .campo-invalido {
+        @apply border-ameixa bg-lima/20;
+    }
+
+    .erro-campo {
+        @apply mt-2 flex items-start gap-1.5 text-sm font-medium text-ameixa;
+    }
+
+    .selo {
+        @apply inline-flex items-center gap-1.5 whitespace-nowrap rounded-full px-3 py-1 font-subtitulo text-xs font-bold;
+    }
+
+    .linha-decorativa {
+        @apply pointer-events-none absolute;
+    }
+}
